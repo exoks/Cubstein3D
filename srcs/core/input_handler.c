@@ -6,7 +6,7 @@
 /*   By: hael-mou <hael-mou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:48:10 by hael-mou          #+#    #+#             */
-/*   Updated: 2023/10/24 16:00:45 by hael-mou         ###   ########.fr       */
+/*   Updated: 2025/02/28 10:16:24 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	key_handler(t_engine *inst)
 		action_handler(inst);
 }
 
-//=== mouse_handler : ==========================================================
+//===<[ mouse_handler :]>=======================================================
 void	mouse_handler(t_engine *inst)
 {
 	static uint16_t	idex;
