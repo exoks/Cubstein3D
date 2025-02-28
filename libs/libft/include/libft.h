@@ -6,7 +6,7 @@
 /*   By: hael-mou <hael-mou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 10:25:28 by hael-mou          #+#    #+#             */
-/*   Updated: 2023/10/24 16:21:49 by hael-mou         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:32:21 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,3 +198,4 @@ t_vect2d	ft_rotate_vect2d(t_vect2d vector, double angle);
 t_vect2d	ft_scale_vect2d(t_vect2d vector, double scale);
 
 #endif /* LIBFT_H */
+//==============================================================================

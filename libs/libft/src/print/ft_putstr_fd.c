@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hael-mou <hael-mou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 13:43:27 by hael-mou          #+#    #+#             */
-/*   Updated: 2023/09/18 00:43:55 by hael-mou         ###   ########.fr       */
+/*   Created: 2022/09/30 12:49:41 by oezzaou           #+#    #+#             */
+/*   Updated: 2025/02/28 17:23:31 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	*ft_memset(void *memory, int constant, size_t len)
+//====<[ ft_putstr_fd: ]>=======================================================
+void	ft_putstr_fd(char *s, int fd)
 {
-	while (len--)
-		*((unsigned char *)memory + len) = (unsigned char)constant;
-	return (memory);
+	if (!s)
+		return ;
+	while (*s && fd != -1)
+		write(fd, s++, 1);
 }

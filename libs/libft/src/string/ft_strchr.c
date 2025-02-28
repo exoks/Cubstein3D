@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hael-mou <hael-mou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 13:42:35 by hael-mou          #+#    #+#             */
-/*   Updated: 2023/09/18 00:43:52 by hael-mou         ###   ########.fr       */
+/*   Created: 2022/09/29 21:27:56 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 18:22:13 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	*ft_bzero(void *memory, size_t len)
+//====<[ ft_strchr: ]>==========================================================
+char	*ft_strchr(const char *s, int c)
 {
-	return (ft_memset(memory, 0, len));
+	while (*s && *s != (char) c)
+		s++;
+	if (*s != 0 || (c == 0 && *s == 0))
+		return ((char *) s);
+	return (0);
 }

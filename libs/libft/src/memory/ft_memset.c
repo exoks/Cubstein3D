@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hael-mou <hael-mou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 13:45:11 by hael-mou          #+#    #+#             */
-/*   Updated: 2023/10/18 11:27:20 by hael-mou         ###   ########.fr       */
+/*   Created: 2022/09/29 21:17:08 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 18:02:16 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t len)
+//====<[ ft_memset: ]>==========================================================
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	index;
+	unsigned char	*med;
+	size_t			i;
 
-	index = -1;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	while (++index < len)
-		*((unsigned char *)dst + index) = *((unsigned char *)src + index);
-	return (dst);
+	med = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+		med[i++] = c;
+	return (b);
 }

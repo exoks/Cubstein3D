@@ -1,25 +1,23 @@
-/* ************************************************************************** */
+//* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hael-mou <hael-mou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 18:19:20 by hael-mou          #+#    #+#             */
-/*   Updated: 2023/06/19 15:08:20 by oezzaou          ###   ########.fr       */
+/*   Created: 2023/02/06 19:56:47 by hael-mou          #+#    #+#             */
+/*   Updated: 2025/02/28 17:09:06 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *string, int character)
+int32_t	ft_strlen(const char *string)
 {
-	if (!string)
-		return (NULL);
-	while (*string != (char)character)
-	{
-		if (*string++ == '\0')
-			return (0);
-	}
-	return ((char *)string);
+	int32_t	len;
+
+	len = 0;
+	while (string && string[len] != '\0')
+		len++;
+	return (len);
 }
