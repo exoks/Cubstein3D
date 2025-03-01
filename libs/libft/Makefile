@@ -6,7 +6,7 @@
 #    By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 15:57:20 by oezzaou           #+#    #+#              #
-#    Updated: 2025/02/28 17:21:08 by oezzaou          ###   ########.fr        #
+#    Updated: 2025/03/01 08:13:23 by oezzaou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ signature:
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c | $(OBJ_DIR) 
 	@$(CC) $(CFLAGS) $(INCLUDE) -fPIC -c $< -o $@
-	@printf "$(GREEN)[OK]${RESET} ${PINK}Compiling${RESET} %-33s| $@\n" "$<"
+	@printf "$(GREEN)[OK]${RESET} ${PINK}Compiling${RESET} %-38s| $@\n" "$<"
 
 $(OBJ_DIR):
 	@mkdir -p $@
@@ -79,28 +79,28 @@ $(OBJ_DIR):
 clean:
 	@if [ -d $(OBJ_DIR) ]; then\
 		${RM} $(OBJ_DIR);\
-		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-33s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-38s${RESET}| ./%s\n"\
 					 "... " "$(PROJECT)/$(OBJ_DIR) ✔️";\
 	else\
-		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-33s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-38s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(OBJ_DIR) ✖️";\
 	fi
 
 fclean: clean
 	@if [ -f $(STATIC_LIB) ]; then\
 		${RM} $(STATIC_LIB);\
-		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-33s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-38s${RESET}| ./%s\n"\
 				 "... " "$(PROJECT)/$(STATIC_LIB) ✔️";\
 	elif [ ! -f $(STATIC_LIB) ]; then\
-		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-33s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-38s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(STATIC_LIB) ✖️";\
 	fi
 	@if [ -f $(SHARED_LIB) ]; then\
 		${RM} $(SHARED_LIB);\
-		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-33s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-38s${RESET}| ./%s\n"\
 				 "... " "$(PROJECT)/$(SHARED_LIB) ✔️";\
 	elif [ ! -f $(SHARED_LIB) ]; then\
-		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-33s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-38s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(SHARED_LIB) ✖️";\
 	fi
 
