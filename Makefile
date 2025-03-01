@@ -5,45 +5,19 @@
 #  ⢀⠔⠉⠀⠊⠿⠿⣿⠂⠠⠢⣤⠤⣤⣼⣿⣶⣶⣤⣝⣻⣷⣦⣍⡻⣿⣿⣿⣿⡀                                              
 #  ⢾⣾⣆⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠉⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇                                              
 #  ⠀⠈⢋⢹⠋⠉⠙⢦⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇       Created: 2023/09/07 08:48:02 by oezzaou
-#  ⠀⠀⠀⠑⠀⠀⠀⠈⡇⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇       Updated: 2025/03/01 10:50:20 by oezzaou
+#  ⠀⠀⠀⠑⠀⠀⠀⠈⡇⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇       Updated: 2025/03/01 11:34:11 by oezzaou
 #  ⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢀⣾⣿⣿⠿⠟⠛⠋⠛⢿⣿⣿⠻⣿⣿⣿⣿⡿⠀                                              
 #  ⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⢠⣿⣟⣭⣤⣶⣦⣄⡀⠀⠀⠈⠻⠀⠘⣿⣿⣿⠇⠀                                              
 #  ⠀⠀⠀⠀⠀⠱⠤⠊⠀⢀⣿⡿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠘⣿⠏⠀⠀                             𓆩♕𓆪      
 #  ⠀⠀⠀⠀⠀⡄⠀⠀⠀⠘⢧⡀⠀⠀⠸⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠐⠋⠀⠀⠀                     𓄂 oussama ezzaou𓆃  
 #  ⠀⠀⠀⠀⠀⠘⠄⣀⡀⠸⠓⠀⠀⠀⠠⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                                              
 
-PROJECT		:= Cub3D
-NAME 			:=	cub3D
+#===<[ Clang compiler : ]>======================================================
+CC						:= 	cc
+CFLAGS				:= 	-Wall -Wextra -Werror
+RM						:= 	rm -rf
 
-#=== Directories : =============================================================
-SRC_DIR			:=	src
-OBJ_DIR			:=	obj
-GLFW_DIR		:=	$(shell brew --prefix glfw)
-LIBFT_DIR		:=	libs/libft
-MLX42_DIR		:=	libs/mlx42
-
-#=== Libraries : ===============================================================
-LIBFT			:=	$(LIBFT_DIR)/libft.a
-
-#=== Files: ====================================================================
-SRC_FILES		:=	$(wildcard $(SRC_DIR)/*/*.c) $(wildcard $(SRC_DIR)/*.c)
-OBJ_FILES		:=	$(patsubst %.c,$(OBJ_DIR)/%.o, $(notdir $(SRC_FILES)))
-MAP_FILE		:=	"Default"
-
-#=== include : =================================================================
-INCLUDE_FILES	:=	$(wildcard libs/*/include/*.h) $(wildcard include/*.h)
-INCLUDE_DIRS	:=	$(sort $(dir $(INCLUDE_FILES)))
-
-#=== Command : =================================================================
-CC				:= 	cc
-RM				:= 	rm -rf
-CFLAGS 			:= 	-Wall -Wextra -Werror -o3 #-g -fsanitize=address
-LINKS			:= 	-lmlx42 -lglfw -lft -lm
-LINKS_DIR		:=	-L$(MLX42_DIR) -L$(GLFW_DIR)/lib -L$(LIBFT_DIR)
-FRAMEWORKS		:=	-framework Cocoa -framework OpenGL -framework IOKit
-INCLUDE			:=	$(addprefix -I,$(INCLUDE_DIRS))
-
-#=== Colors : ==================================================================
+#===<[ Colors : ]>==============================================================
 GREEN					= \033[1;32m
 RED						= \033[1;31m
 BLUE					= \033[34m
@@ -67,26 +41,44 @@ LIGHT_WHITE  	= \033[97m
 LIGHT_BLUE		= \033[38;5;45m
 RESET					= \033[1;0m
 
-#=== role : ====================================================================
+#===<[ Sources : ]>=============================================================
+PROJECT				:= Cub3D
+NAME					:= cub3D
+SRC_DIR				:= src
+OBJ_DIR				:= obj
+LIBFT					:= libs/libft
+MLX42					:= libs/mlx42
+
+SRC						:= $(wildcard $(SRC_DIR)/*/*.c) $(wildcard $(SRC_DIR)/*.c)
+OBJ						:= $(patsubst %.c,$(OBJ_DIR)/%.o, $(notdir $(SRC)))
+
+INCLUDE_FILES	:= $(wildcard libs/*/include/*.h) $(wildcard include/*.h)
+INCLUDE_DIRS	:= $(sort $(dir $(INCLUDE_FILES)))
+INCLUDE				:= $(addprefix -I,$(INCLUDE_DIRS))
+
+#===[ Links: for MACOS ]===
+GLFW_DIR			:= $(shell brew --prefix glfw)
+LINKS					:= -lmlx42 -lglfw -lft -lm
+LINKS_DIR			:= -L$(MLX42) -L$(GLFW_DIR)/lib -L$(LIBFT)
+FRAMEWORKS		:= -framework Cocoa -framework OpenGL -framework IOKit
+
+#===[ Links: for LINUX ]===
+# LINKS					:= -lmlx42 -lglfw -lft -lm
+# LINKS_DIR			:= -L$(MLX42) -L$(GLFW_DIR)/lib -L$(LIBFT)
+# FRAMEWORKS		:= -framework Cocoa -framework OpenGL -framework IOKit
+# -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+
+#===<[ Rules : ]>===============================================================
 all: $(LIBFT) $(NAME)
 
-$(NAME): $(OBJ_DIR) | $(OBJ_FILES)
+$(NAME): $(OBJ_DIR) | $(OBJ)
 	@$(CC) $(CFLAGS) $(INCLUDE) $(LINKS_DIR) $(FRAMEWORKS) $| -o $@ $(LINKS)
-	@test | awk '{for (i=0; i < 80; i++)\
+	@echo | awk '{for (i=0; i < 80; i++)\
 		{printf("$(GREEN)█"); system("sleep 0.01")}; printf("\n")}'
 	@echo "${GREEN}[OK] ${CYAN}$@ ✔️${RESET}"
 
 bonus: all
 
-#=== Libraries cmp : ===========================================================
-$(LIBFT):
-	@make -C $(LIBFT_DIR)
-
-#=== Create dir : ==============================================================
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-
-#=== pattern rules : ===========================================================
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 	@printf "$(GREEN)[OK]${RESET} ${PINK}Compiling${RESET} %-38s| $@\n" "$<"
@@ -95,8 +87,18 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 	@printf "$(GREEN)[OK]${RESET} ${PINK}Compiling${RESET} %-38s| $@\n" "$<"
 
+$(LIBFT):
+	@make -C $@ 
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+# Rule usage > [ make run MAP=<map_file_path> ]
+run:
+	@./$(NAME) $(MAP)
+
 clean:
-	@make -s -C $(LIBFT_DIR) fclean
+	@make -s -C $(LIBFT) fclean
 	@if [ -d $(OBJ_DIR) ]; then\
 		${RM} $(OBJ_DIR);\
 		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-38s${RESET}| ./%s\n"\
@@ -120,5 +122,5 @@ re:	fclean all
 
 .SUFFIXES: .c .o .a .so
 
-.PHONY: all bonus clean fclean re run
+.PHONY: all bonus clean fclean re run $(LIBFT)
 #===============================================================================
