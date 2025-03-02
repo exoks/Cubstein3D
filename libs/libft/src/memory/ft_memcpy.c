@@ -14,17 +14,17 @@
 //====<[ ft_memcpy: ]>==========================================================
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*med;
-	size_t	i;
+	char    *med;
+	size_t	index;
 
 	med = (char *) dst;
 	if (dst != src)
 	{
-		i = 0;
-		while (i < n)
+		index = 0;
+		while (index < n)
 		{
-			med[i] = *((char *)src + i);
-			i++;
+			med[index] = *((char *)src + index);
+			index++;
 		}
 	}
 	return (dst);

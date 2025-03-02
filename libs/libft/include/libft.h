@@ -33,11 +33,11 @@
 /*                               vector2D                                     */
 /* ************************************************************************** */
 
-typedef struct s_vect2d
+typedef struct  s_vect2d
 {
-	double		x;
-	double		y;
-}	t_vect2d;
+	double		    x;
+	double		    y;
+}               t_vect2d;
 
 /* ************************************************************************** */
 /*                                MEMORY                                      */

@@ -14,7 +14,7 @@
 //====<[ ft_calloc: ]>==========================================================
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*pt;
+	void	  *pt;
 	size_t	i;
 
 	if (!count || !size)
