@@ -29,8 +29,8 @@ void	action_handler(t_engine *inst)
 //=== door_handler : ==========================================================
 void	door_handler(t_engine *inst)
 {
-	static t_vect2d	open;
-	t_vect2d		curs;
+	static t_vect2d open;
+	t_vect2d		    curs;
 
 	curs = ft_add_vect2d(inst->cam->direction, inst->cam->position);
 	if (inst->data->map[(int)curs.y][(int)curs.x] == '2')
@@ -73,10 +73,10 @@ void	key_handler(t_engine *inst)
 //===<[ mouse_handler :]>=======================================================
 void	mouse_handler(t_engine *inst)
 {
-	static uint16_t	idex;
-	static double	pre;
-	int32_t			x;
-	int32_t			y;
+	static uint16_t idex;
+	static double   pre;
+	int32_t			    x;
+	int32_t			    y;
 
 	mlx_get_mouse_pos(inst->mlx, &x, &y);
 	mlx_set_cursor_mode(inst->mlx, MLX_MOUSE_HIDDEN);

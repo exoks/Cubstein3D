@@ -39,7 +39,7 @@ static t_ray	get_new_ray(t_vect2d pos, t_vect2d dir)
 //=== reycaster : =============================================================
 t_final_ray	raycaster(t_vect2d start, t_vect2d ray_dir, t_data *data)
 {
-	t_ray		ray;
+	t_ray       ray;
 	t_final_ray	fray;
 
 	ray = get_new_ray(start, ray_dir);

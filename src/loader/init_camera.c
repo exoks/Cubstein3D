@@ -16,8 +16,8 @@
 t_camera	*init_camera(char **map)
 {
 	t_camera	*cam;
-	int			x;
-	int			y;
+	int			  x;
+	int			  y;
 
 	y = -1;
 	cam = ft_calloc(1, sizeof(t_camera));

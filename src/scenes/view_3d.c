@@ -15,8 +15,8 @@
 //=== reycaster ================================================================
 void	render_view(mlx_image_t *view, t_camera *cam, t_data *data)
 {
-	int32_t		screen_x;
-	t_vect2d	cur;
+	int32_t		  screen_x;
+	t_vect2d	  cur;
 	t_final_ray	ray;
 
 	screen_x = -1;

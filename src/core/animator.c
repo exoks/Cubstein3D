@@ -40,9 +40,9 @@ void	play_action(mlx_image_t *img, t_action *action, int16_t *active)
 //== animator : ===============================================================
 void	animator(t_engine *engine)
 {
-	static uint16_t	index;
-	static double	t_acm;
-	t_action		*anime;
+	static uint16_t index;
+	static double   t_acm;
+	t_action		    *anime;
 
 	if (index++ % 2 == 0 && engine->player.active_action != -1)
 	{

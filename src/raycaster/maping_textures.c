@@ -5,7 +5,7 @@
 //  ⢀⠔⠉⠀⠊⠿⠿⣿⠂⠠⠢⣤⠤⣤⣼⣿⣶⣶⣤⣝⣻⣷⣦⣍⡻⣿⣿⣿⣿⡀                                              
 //  ⢾⣾⣆⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠉⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇                                              
 //  ⠀⠈⢋⢹⠋⠉⠙⢦⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇       Created: 2023/10/15 09:39:35 by oezzaou
-//  ⠀⠀⠀⠑⠀⠀⠀⠈⡇⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇       Updated: 2025/02/28 10:21:51 by oezzaou
+//  ⠀⠀⠀⠑⠀⠀⠀⠈⡇⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇       Updated: 2025/03/02 11:57:37 by oezzaou
 //  ⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢀⣾⣿⣿⠿⠟⠛⠋⠛⢿⣿⣿⠻⣿⣿⣿⣿⡿⠀                                              
 //  ⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⢠⣿⣟⣭⣤⣶⣦⣄⡀⠀⠀⠈⠻⠀⠘⣿⣿⣿⠇⠀                                              
 //  ⠀⠀⠀⠀⠀⠱⠤⠊⠀⢀⣿⡿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠘⣿⠏⠀⠀                             𓆩♕𓆪      
@@ -39,7 +39,7 @@ static void	get_wall_info(t_wall *wall, t_final_ray *ray, t_data *data)
 static float	get_xp(t_final_ray *ray)
 {
 	t_vect2d	ipv;
-	float		xp;
+	float     xp;
 
 	ipv = ft_scale_vect2d(ray->direction, ray->distance);
 	ipv = ft_add_vect2d(ray->origin, ipv);
@@ -59,8 +59,8 @@ static float	get_yp(int32_t y, t_wall *wall)
 //====<[ get_texel: ]>==========================================================
 static uint32_t	get_texel(float xp, float yp, mlx_texture_t *txtr, float intens)
 {
-	int			x;
-	int			y;
+	int			  x;
+	int			  y;
 	uint32_t	texel;
 
 	if (!txtr)
@@ -76,7 +76,7 @@ void	maping_textures(mlx_image_t *view, int x, t_final_ray *r, t_data *data)
 {
 	t_wall		wall;
 	uint32_t	pixel;
-	float		xp;
+	float		  xp;
 	int32_t		y;
 	double		c;
 
