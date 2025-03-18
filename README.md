@@ -34,14 +34,14 @@ add image for cub3d
 
 ## How it Works ##
 Cub3D uses raycasting to project 2D maps into a 3D perspective:
-  - The world is represented as a 2D grid map.
-  - The player is a point with a direction and field of view (FOV).
-  - For each vertical stripe on the screen, a ray is cast in the direction of the player's view.
-  - When the ray hits a wall, the distance is calculated and used to draw a vertical slice (wall) with the correct height and texture.
-  - Repeat for all rays to fill the screen and simulate a 3D environment.
+  1. The world is represented as a **2D grid map**.
+  2. The player is a point with a direction and field of view (FOV).
+  3. For each vertical stripe on the screen, a **ray** is cast in the direction of the player's view.
+  4. When the **ray** hits a wall, the **distance** is calculated and used to draw a vertical slice (wall) with the correct **height** and **texture**.
+  5. **Repeat** for all **rays** to fill the screen and simulate a **3D environment**.
 
 ## Project Structure ##
-add image for project structure
+<img width="417" alt="Image" src="https://github.com/user-attachments/assets/b1c1d26a-1ff5-4469-974f-3a27310424e5" />
 
 ## Game Controls ##
 <table>
