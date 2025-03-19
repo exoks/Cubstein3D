@@ -1,7 +1,7 @@
 # Cubstein3D - A Raycasting Game Inspired by Wolfenstein 3D #
 <img width="1000" alt="Image" src="https://github.com/user-attachments/assets/b8cc4e46-c005-4eb7-ad1c-aa82a7c317b3" />
 
-## Table of Contents ##
+## **Table of Contents** ##
 1. **[Project Overview](#project-overview)** 
 2. **[Features](#features)**
 3. **[Project Structure](#project-structure)** 
@@ -13,10 +13,10 @@
 9. **[Getting Started](#getting-started)**
 10. **[License](#license)**
 
-## Project Overview ##
+## **Project Overview** ##
 **Cubstein3D** is a **raycasting-based** game inspired by the iconic **Wolfenstein 3D**, the first-ever FPS. Built in `C` using the [MLX42](https://github.com/codam-coding-college/MLX42) library, it brings classic **2.5D graphics** to life, **Cubstein3D** focused on **low-level graphics programming** and game **mechanics**.
 
-## Features ##
+## **Features** ##
 - **Raycasting engine** to render walls and textures.
 - Smooth player movement and rotation.
 - **Collision** detection.
@@ -25,17 +25,17 @@
 - **Door** system.
 - **Weapon** animation.
 
-## Project Structure ##
+## **Project Structure** ##
 <img width="320" alt="Image" src="https://github.com/user-attachments/assets/4774b865-a1a8-4389-b5dc-0708d1667a6f" />
 
-## Technologies Used ##
+## **Technologies Used** ##
 - **Language**: `C`
 - **Graphics Library**: [MLX42](https://github.com/codam-coding-college/MLX42)
 - **Math**: Vector arithmetic, Trigonometry.
 - **Build System**: `Makefile`
 - **OS**: `macOS`
 
-## How it Works ##
+## **How it Works** ##
 Cub3D uses ray-casting to project 2D maps into a 3D perspective:
   1. The world is represented as a **2D grid map**.
   2. The player is a point with a direction and field of view (FOV).
@@ -43,7 +43,7 @@ Cub3D uses ray-casting to project 2D maps into a 3D perspective:
   4. When the **ray** hits a wall, the **distance** is calculated and used to draw a vertical slice (wall) with the correct **height** and **texture**.
   5. **Repeat** for all **rays** to fill the screen and simulate a **3D environment**.
 
-## Game Controls ##
+## **Game Controls** ##
 <table>
   <thead>
     <tr>
@@ -69,16 +69,16 @@ Cub3D uses ray-casting to project 2D maps into a 3D perspective:
       <td>Strafe right</td>
     </tr>
     <tr>
+      <td><code>R</code></td>
+      <td>Reload weapon</td>
+    </tr>
+    <tr>
       <td><code>&larr; (Left Arrow)</code></td>
       <td>Turn left</td>
     </tr>
     <tr>
       <td><code>&rarr; (Right Arrow)</code></td>
       <td>Turn right</td>
-    </tr>
-    <tr>
-      <td><code>M</code></td>
-      <td>Toggle minimap</td>
     </tr>
     <tr>
       <td><code>Mouse Move Left/Right</code></td>
@@ -97,17 +97,13 @@ Cub3D uses ray-casting to project 2D maps into a 3D perspective:
       <td>Fire weapon</td>
     </tr>
     <tr>
-      <td><code>R</code></td>
-      <td>Reload weapon</td>
-    </tr>
-    <tr>
       <td><code>ESC</code></td>
       <td>Exit game</td>
     </tr>
   </tbody>
 </table>
 
-## Map Format ##
+## **Map Format** ##
 Cub3D reads maps from .cub files with the following structure:
 
 ```bash
@@ -138,7 +134,7 @@ C 225,30,0
 >   * `2`: Door
 >   * `N`, `S`, `E`, `W`: Player starting position and direction
 
-## Future Improvements ##
+## **Future Improvements** ##
 <table>
   <thead>
     <tr>
@@ -151,8 +147,6 @@ C 225,30,0
     <!-- Graphics & Visuals -->
     <tr>
       <td rowspan="5"><strong>Graphics & Visuals</strong></td>
-      <td>Dynamic Lighting & Shadows</td>
-      <td>Real-time lights and shadows from various light sources</td>
     </tr>
     <tr>
       <td>Day/Night Cycle</td>
@@ -233,12 +227,12 @@ C 225,30,0
   </tbody>
 </table>
 
-## Getting Started ##
-### Prerequisties : ###
+## **Getting Started** ##
+### **Prerequisties :** ###
 - macOS
 
 ### Usage : ###
-##### Building the project : #####
+##### **Building the project** #####
 1. Clone Cubstein3D repository : 
 ```bash
 git clone https://www.github.com/exoks/Cubstein3D.git
@@ -252,7 +246,7 @@ make
 ```bash
 ./cub3d <path_to_map.cub>
 ```
-##### Cleanup #####
+##### **Cleanup** #####
 - Remove Object files: 
 ```bash
 make clean
@@ -262,7 +256,7 @@ make clean
 make fclean
 ```
 
-## License ##
+## **License** ##
 - This project is for educational purposes and is not intended for commercial use.
 Feel free to fork and experiment! 🤝
 
