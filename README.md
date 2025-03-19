@@ -4,9 +4,9 @@
 ## Table of Contents ##
 1. **[Project Overview](#project-overview)** 
 2. **[Features](#features)**
-3. **[Technologies Used](#technologies-used)**
-4. **[How it Works](#how-it-works)**
-5. **[Project Structure](#project-structure)** 
+3. **[Project Structure](#project-structure)** 
+4. **[Technologies Used](#technologies-used)**
+5. **[How it Works](#how-it-works)**
 6. **[Game Controls](#game-controls)**
 7. **[Map Format](#map-format)**
 8. **[Future Improvements](#future-improvements)**
@@ -25,6 +25,9 @@
 - **Door** system.
 - **Weapon** animation.
 
+## Project Structure ##
+<img width="320" alt="Image" src="https://github.com/user-attachments/assets/4774b865-a1a8-4389-b5dc-0708d1667a6f" />
+
 ## Technologies Used ##
 - **Language**: `C`
 - **Graphics Library**: [MLX42](https://github.com/codam-coding-college/MLX42)
@@ -33,15 +36,12 @@
 - **OS**: `macOS`
 
 ## How it Works ##
-Cub3D uses raycasting to project 2D maps into a 3D perspective:
+Cub3D uses ray-casting to project 2D maps into a 3D perspective:
   1. The world is represented as a **2D grid map**.
   2. The player is a point with a direction and field of view (FOV).
   3. For each vertical stripe on the screen, a **ray** is cast in the direction of the player's view.
   4. When the **ray** hits a wall, the **distance** is calculated and used to draw a vertical slice (wall) with the correct **height** and **texture**.
   5. **Repeat** for all **rays** to fill the screen and simulate a **3D environment**.
-
-## Project Structure ##
-<img width="417" alt="Image" src="https://github.com/user-attachments/assets/b1c1d26a-1ff5-4469-974f-3a27310424e5" />
 
 ## Game Controls ##
 <table>
