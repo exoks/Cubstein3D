@@ -1,5 +1,7 @@
 # Cubstein3D - A Raycasting Game Inspired by Wolfenstein 3D #
-<img width="1000" alt="Image" src="https://github.com/user-attachments/assets/b8cc4e46-c005-4eb7-ad1c-aa82a7c317b3" />
+<img width="1000" alt="Image" src="https://github.com/user-attachments/assets/9350ee63-90e4-4f32-a6f0-6eef6f3595e5" />
+
+---
 
 ## **Table of Contents** ##
 1. **[Project Overview](#project-overview)** 
@@ -12,6 +14,8 @@
 8. **[Future Improvements](#future-improvements)**
 9. **[Getting Started](#getting-started)**
 10. **[License](#license)**
+
+---
 
 ## **Project Overview** ##
 **Cubstein3D** is a **raycasting-based** game inspired by the iconic **Wolfenstein 3D**, the first-ever FPS. Built in `C` using the [MLX42](https://github.com/codam-coding-college/MLX42) library, it brings classic **2.5D graphics** to life, **Cubstein3D** focused on **low-level graphics programming** and game **mechanics**.
